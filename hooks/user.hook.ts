@@ -15,6 +15,8 @@ export async function fetcher (url: string) {
 export function useUser (userId: number) {
   const { data, error, isLoading } = useSWR<User, Error>(`/api/users/${userId}`, fetcher)
 
+  console.log(error)
+
   return {
     data,
     error,

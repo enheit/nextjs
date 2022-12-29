@@ -21,6 +21,8 @@ export default function handler(
     id: crypto.randomUUID(),
     name: 'Jhon Doe'
   }
+
+  console.log(req, res)
   
   res.status(200).json(user)
 }
