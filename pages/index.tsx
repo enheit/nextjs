@@ -1,15 +1,7 @@
 import Head from 'next/head'
-import { useState } from 'react'
-import { useUser } from '../hooks/user.hook'
 
 export default function Home() {
-  const [userId, setUserId] = useState(1);
-  
-  const { data, isLoading, error } = useUser(userId)
 
-  function fetchAnotherUser () {
-    setUserId(prevUserId => prevUserId + 1)
-  }
 
   return (
     <>
@@ -20,9 +12,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1>Hello {isLoading ? 'Loading...' : data?.name}</h1>
-
-      <button onClick={fetchAnotherUser}>Fetch another user</button>
+      <h1>HOME PAGE</h1>
     </>
   )
 }

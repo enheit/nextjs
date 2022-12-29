@@ -1,7 +1,7 @@
 import { useUser } from "../../hooks/user.hook"
 
 export default function Dashboard() {
-  const { data, isLoading, error } = useUser(1);
+  const { data, isLoading, error } = useUser("63ad8edd3f4a590facac6669");
 
   if (isLoading) {
     return (

@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import { Error, User } from '../pages/api/users/[id]'
 
-export async function fetcher (url: string) {
+export async function fetcher(url: string) {
   const response = await fetch(url, {
     headers: {
       // 'Authentication': 'Bearer 123'
@@ -12,10 +12,8 @@ export async function fetcher (url: string) {
   return result;
 }
 
-export function useUser (userId: number) {
+export function useUser(userId: string) {
   const { data, error, isLoading } = useSWR<User, Error>(`/api/users/${userId}`, fetcher)
-
-  console.log(error)
 
   return {
     data,

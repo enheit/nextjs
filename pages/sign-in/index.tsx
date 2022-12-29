@@ -20,9 +20,9 @@ async function updateUser(url: string, { arg }: { arg: AuthenticationFormData })
 export default function SignIn() {
   const router = useRouter()
   const { trigger } = useSWRMutation<void, any, string, AuthenticationFormData>('/api/auth/sign-in', updateUser)
-  
 
-  async function handleSignIn () {
+
+  async function handleSignIn() {
     const result = await trigger({ username: "jhon", password: "secret" })
     router.push('/dashboard')
   }

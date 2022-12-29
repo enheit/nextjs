@@ -6,11 +6,15 @@ export function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
+  if (request.nextUrl.pathname === '/sign-up') {
+    return NextResponse.next()
+  }
+
   const accessToken = request.cookies.get('accessToken');
 
   if (!accessToken) {
     return NextResponse.redirect(new URL('/sign-in', request.url))
-  } 
+  }
 
   return NextResponse.next()
 }
