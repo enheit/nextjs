@@ -18,7 +18,7 @@ export default function handler(
   console.log("Cokies", req.cookies);
   
   const user: User = {
-    id: crypto.randomUUID(),
+    id: "1",
     name: 'Jhon Doe'
   }
 
