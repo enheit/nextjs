@@ -24,6 +24,8 @@ export default function SignIn() {
 
   async function handleSignIn() {
     const result = await trigger({ username: "jhon", password: "secret" })
+
+
     router.push('/dashboard')
   }
 
